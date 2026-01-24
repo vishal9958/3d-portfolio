@@ -23,7 +23,7 @@ import {
   SiReactquery,
   SiTailwindcss,
   SiTypescript,
-  SiJava,
+  FaJava,
   SiThreedotjs
   
 
@@ -133,7 +133,7 @@ const PROJECT_SKILLS = {
     title: "Java",
     bg: "black",
     fg: "white",
-    icon: <SiJava />,
+    icon: <FaJava />,
   },
   tailwind: {
     title: "Tailwind",
