@@ -49,9 +49,9 @@ This portfolio showcases my skills, projects, experience, and contact details wi
 
 If you’d like to collaborate or hire me:
 
-- 📧 Email: your-email@gmail.com  
-- 💼 LinkedIn: https://linkedin.com/in/your-profile  
-- 🐙 GitHub: https://github.com/your-username  
+- 📧 Email: vk6051950@gmail.com  
+- 💼 LinkedIn: https://www.linkedin.com/in/bappaditya-biswas/  
+- 🐙 GitHub: https://github.com/vishal9958  
 
 ---
 
