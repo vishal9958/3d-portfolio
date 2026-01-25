@@ -3,7 +3,7 @@
 A modern, interactive **3D portfolio website** built using **Next.js**, **Spline**, and **Framer Motion**.  
 This portfolio showcases my skills, projects, experience, and contact details with an immersive 3D keyboard interface.
 
-🌐 **Live Demo:** https://YOUR-VERCEL-LINK.vercel.app
+🌐 **Live Demo:** https://bappaditya-portfolio.vercel.app/
 
 ---
 
