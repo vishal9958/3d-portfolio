@@ -171,7 +171,7 @@ const TOOLS = [
   {
     name: "SQL",
     content: "Next.js is a React framework for production",
-    icon: <FaDatabase size={"50px"} color="#fff" />,
+    // icon: <FaDatabase size={"50px"} color="#fff" />,
     color: "#000000",
   },
   {

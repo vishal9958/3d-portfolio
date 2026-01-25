@@ -23,7 +23,7 @@ import {
   SiReactquery,
   SiTailwindcss,
   SiTypescript,
-  FaJava,
+  // FaJava,
   SiThreedotjs
   
 
@@ -133,7 +133,7 @@ const PROJECT_SKILLS = {
     title: "Java",
     bg: "black",
     fg: "white",
-    icon: <FaJava />,
+    // icon: <FaJava />,
   },
   tailwind: {
     title: "Tailwind",
@@ -592,7 +592,6 @@ const projects: Project[] = [
       PROJECT_SKILLS.react,
       PROJECT_SKILLS.tailwind,
       PROJECT_SKILLS.canva,
-      PROJECT_SKILLS.figma,
     ],
     backend: [],
   },

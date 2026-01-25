@@ -1,4 +1,4 @@
-# 🚀 Vishal Biswas – 3D Developer Portfolio
+# 🚀 Bappaditya Biswas – 3D Developer Portfolio
 
 A modern, interactive **3D portfolio website** built using **Next.js**, **Spline**, and **Framer Motion**.  
 This portfolio showcases my skills, projects, experience, and contact details with an immersive 3D keyboard interface.

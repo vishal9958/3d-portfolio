@@ -25,6 +25,7 @@ const config = {
 
   // GitHub stars button
   githubUsername: "vishal9958",
+  githubRepo: "3d-portfolio",
 
   // ✅ safe og image
   get ogImg() {
