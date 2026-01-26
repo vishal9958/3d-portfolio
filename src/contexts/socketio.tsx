@@ -16,40 +16,40 @@ export type User = {
   name: string;
   avatar: string;
   color: string;
-  isOnline: string;
-  posX: number;
-  posY: number;
+  isOnline: boolean;
+  posX?: number;
+  posY?: number;
   location: string;
   flag: string;
-  lastSeen: string;
+  lastSeen: string | null;
   createdAt: string;
 };
+
 export type Message = {
-  id: string;
+  id: number;
   sessionId: string;
-  flag: string;
-  country: string;
   username: string;
   avatar: string;
   color?: string;
+  flag: string;
   content: string;
   createdAt: string | Date;
-}
+};
 
 type SocketContextType = {
   socket: Socket | null;
   users: User[];
   setUsers: Dispatch<SetStateAction<User[]>>;
   msgs: Message[];
-  isCurrentUser: boolean
+  isCurrentUser: boolean;
 };
 
 const INITIAL_STATE: SocketContextType = {
   socket: null,
   users: [],
-  setUsers: () => { },
+  setUsers: () => {},
   msgs: [],
-  isCurrentUser: false
+  isCurrentUser: false,
 };
 
 export const SocketContext = createContext<SocketContextType>(INITIAL_STATE);
@@ -60,51 +60,58 @@ const SocketContextProvider = ({ children }: { children: ReactNode }) => {
   const [socket, setSocket] = useState<Socket | null>(null);
   const [users, setUsers] = useState<User[]>([]);
   const [msgs, setMsgs] = useState<Message[]>([]);
-  const [isCurrentUser, setIsCurrentUser] = useState(false);
   const { toast } = useToast();
 
-  // SETUP SOCKET.IO
   useEffect(() => {
-    if (!process.env.NEXT_PUBLIC_WS_URL) return
-    const socket = io(process.env.NEXT_PUBLIC_WS_URL!, {
-      auth: {
-        sessionId: localStorage.getItem(SESSION_ID_KEY), // send on reconnect to restore session
-      },
-    });
-    setSocket(socket);
-    socket.on("connect", () => { });
-    socket.on("msgs-receive-init", (msgs) => {
-      setMsgs(msgs);
-    });
-    socket.on("session", ({ sessionId }) => {
-      localStorage.setItem(SESSION_ID_KEY, (sessionId));
-    });
+  if (!process.env.NEXT_PUBLIC_WS_URL) return;
 
-    socket.on("msg-receive", (msgs) => {
-      setMsgs((p) => [...p, msgs]);
-    });
+  const socket = io(process.env.NEXT_PUBLIC_WS_URL, {
+    auth: {
+      sessionId: localStorage.getItem(SESSION_ID_KEY),
+    },
+  });
 
-    socket.on("warning", (data: { message: string }) => {
-      console.log(data)
-      toast({
-        variant: "destructive",
-        title: "System Warning",
-        description: data.message,
-      });
-    });
+  setSocket(socket);
 
-    socket.on("msg-delete", (data: { id: number }) => {
-      console.log(data)
-      setMsgs((prev) => prev.filter((m) => Number(m.id) !== data.id));
+  socket.on("session", ({ sessionId }) => {
+    localStorage.setItem(SESSION_ID_KEY, sessionId);
+  });
+
+  // 🟢 initial messages (only once)
+  socket.on("msgs-receive-init", (initialMsgs: Message[]) => {
+    setMsgs((prev) => (prev.length === 0 ? initialMsgs : prev));
+  });
+
+  // 🟢 realtime messages (THIS FIXES YOUR BUG)
+  socket.on("msg-receive", (msg: Message) => {
+    setMsgs((prev) => [...prev, msg]);
+  });
+
+  // 🟢 online users / profile
+  socket.on("users-update", (users: User[]) => {
+    setUsers(users);
+  });
+
+  socket.on("warning", (data: { message: string }) => {
+    toast({
+      variant: "destructive",
+      title: "System Warning",
+      description: data.message,
     });
-    return () => {
-      socket.disconnect();
-    };
-  }, []);
-  const currentUser = users.find(u => u.socketId === socket?.id);
+  });
+
+  return () => {
+    socket.disconnect();
+  };
+}, []);
+
+
+  const isCurrentUser = !!users.find((u) => u.socketId === socket?.id);
 
   return (
-    <SocketContext.Provider value={{ socket: socket, users, setUsers, msgs, isCurrentUser }}>
+    <SocketContext.Provider
+      value={{ socket, users, setUsers, msgs, isCurrentUser }}
+    >
       {children}
     </SocketContext.Provider>
   );

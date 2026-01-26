@@ -81,11 +81,10 @@ const OnlineUsers = () => {
     isAtBottomRef.current
   );
 
-  const sendMessage = (msg: string) => {
-    socket?.emit("msg-send", {
-      content: msg,
-    });
-  };
+ const sendMessage = (msg: string) => {
+  socket?.emit("msg-send", { content: msg }); // 👈 OBJECT ONLY
+};
+
 
   const updateProfile = ({ name, avatar, color }: { name: string; avatar: string, color?: string }) => {
     socket?.emit("update-user", {

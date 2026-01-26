@@ -94,7 +94,11 @@ const FloatingDockDesktop = ({
   items,
   className,
 }: {
-  items: { title: string; icon: React.ReactNode }[];
+  items: {
+  title: string;
+  icon: React.ReactNode;
+  onClick?: () => void;
+}[]
   className?: string;
 }) => {
   let mouseX = useMotionValue(Infinity);

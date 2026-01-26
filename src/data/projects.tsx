@@ -522,8 +522,8 @@ const projects: Project[] = [
     title: "My Portfolio",
     src: "/assets/projects-screenshots/portfolio/landing.png",
     screenshots: ["1.png"],
-    live: "#",
-    github:"#",
+    live: "https://bappaditya-portfolio.vercel.app/",
+    github:"https://github.com/vishal9958/3d-portfolio",
     skills: {
       frontend: [
         PROJECT_SKILLS.ts,
