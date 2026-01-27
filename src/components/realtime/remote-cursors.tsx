@@ -61,8 +61,8 @@ const RemoteCursors = () => {
         .map((user) => (
           <Cursor
             key={user.socketId}
-            x={user.posX}
-            y={user.posY}
+             x={user.posX ?? 0}
+             y={user.posY ?? 0}
             color={user.color}
             socketId={user.socketId}
             avatar={user.avatar}
