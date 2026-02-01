@@ -11,53 +11,54 @@ import "@splidejs/react-splide/css";
 const PROJECTS = [
   {
     id: 1,
-    name: "Coding Ducks",
-    description: `Dive into CodingDucks, a fusion of CodePen's creative playground with LeetCode's problem-solving realm.
-Whether you're a newbie or a seasoned coder, join the community to paddle through coding adventures and let your
-creativity soar.`,
-    link: "https://www.codingducks.live",
+    name: "soul-and-stitch",
+    description: `Soul & Stitch is a full-featured e-commerce platform designed to sell
+          handmade crochet and wool-based products.`,
+    link: "https://expo.dev/accounts/vishal00/projects/soul-stitch/builds/3d655c24-8c6c-429e-b8eb-59f2c762af05",
     images: [
-      "/assets/projects-screenshots/codingducks/1.png",
-      "/assets/projects-screenshots/codingducks/2.png",
-      "/assets/projects-screenshots/codingducks/3.png",
-      "/assets/projects-screenshots/codingducks/4.png",
-      "/assets/projects-screenshots/codingducks/5.png",
+      "/assets/projects-screenshots/soul-stitch/login.jpg",
+      "/assets/projects-screenshots/soul-stitch/profile.jpg",
+      "/assets/projects-screenshots/soul-stitch/products.jpg",
+      "/assets/projects-screenshots/soul-stitch/product.jpg",
+      "/assets/projects-screenshots/soul-stitch/wishlist.jpg",
     ],
   },
   {
     id: 2,
-    name: "Ghost Chat",
-    description: `GhostChat is an anonymous messaging app that allows users to connect without revealing their identities. 
-Join the community for intriguing conversations and mysterious encounters.`,
-    link: "https://ghostchatt.vercel.app/",
+    name: "smart-pdf",
+    description: `Smart PDF Toolkit is a productivity-focused web application that offers
+          essential PDF tools in one place. It allows users to convert, edit,
+          and manage PDF documents easily without installing heavy software.`,
+    link: "https://pdf-smart.netlify.app/",
     images: [
-      "/assets/projects-screenshots/ghostchat/1.png",
-      "/assets/projects-screenshots/ghostchat/2.png",
-      "/assets/projects-screenshots/ghostchat/3.png",
-      "/assets/projects-screenshots/ghostchat/4.png",
+      "/assets/projects-screenshots/smart-pdf/landing.png",
+      "/assets/projects-screenshots/smart-pdf/image-to-pdf.png",
+      "/assets/projects-screenshots/smart-pdf/pdf-to-word.png",
+      "/assets/projects-screenshots/smart-pdf/pdf-tools.png",
     ],
   },
   {
     id: 3,
-    name: "Coupon Luxury",
-    description: `Welcome to CouponLuxury, your destination for exclusive discounts and savings. Explore the platform to find the
-best deals on luxury brands and products. Join our savvy community of shoppers and unlock access to premium coupons.`,
-    link: "https://www.couponluxury.com/",
+    name: "vishal-bharat",
+    description: `Vishal Bharat is a complete travel booking and trip planning platform
+          where users can explore destinations, book trips, and plan journeys
+          across India as well as international locations.`,
+    link: "https://vishal-bharat.netlify.app/",
     images: [
-      "/assets/projects-screenshots/couponluxury/1.png",
-      "/assets/projects-screenshots/couponluxury/2.png",
-      "/assets/projects-screenshots/couponluxury/3.png",
-      "/assets/projects-screenshots/couponluxury/4.png",
-      "/assets/projects-screenshots/couponluxury/5.png",
+      "/assets/projects-screenshots/vishal-bharat/landing.png",
+      "/assets/projects-screenshots/vishal-bharat/destinations.png",
+      "/assets/projects-screenshots/vishal-bharat/trip-planner.png",
+      "/assets/projects-screenshots/vishal-bharat/packages.png",
+      "/assets/projects-screenshots/vishal-bharat/bookings.png",
     ],
   },
   {
     id: 4,
-    name: "JNTUA Results Analyser",
+    name: "portfolio",
     description: `the go-to app for JNTUA students, empowering them to analyze, compare, and view classwise results effortlessly.
      Dive into your academic journey with ease, track your progress, and gain valuable insights.`,
-    link: "/projects/4",
-    images: ["/assets/projects-screenshots/jra/1.png"],
+    link: "https://bappaditya-portfolio.netlify.app/",
+    images: ["/assets/projects-screenshots/oldfolio/3.png"],
   },
 ];
 function Page() {

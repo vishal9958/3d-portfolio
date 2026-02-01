@@ -184,6 +184,7 @@ function IconContainer({
   mouseX,
   title,
   icon,
+  
 }: {
   mouseX: MotionValue;
   title: string;
