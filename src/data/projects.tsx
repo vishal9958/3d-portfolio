@@ -686,31 +686,39 @@ const projects: Project[] = [
 },
 
   {
-  id: "stay-organized",
-  category: "Productivity App",
-  title: "Stay Organized",
-  src: "/assets/projects-screenshots/stay-organized/landing.png",
-  screenshots: ["landing.png", "tasks.png"],
-  live: "https://stayorganize.netlify.app/",
-  github: "https://github.com/vishal9958/Task-Nest",
+  id: "resume-ai",
+  category: "AI / Career Tools",
+  title: "Resume AI Analyzer",
+  src: "/assets/projects-screenshots/resume-ai/landing.png",
+  screenshots: ["landing.png", "dashboard.png", "job-matches.png", "chatbot.png"],
+  live: "https://resumeai-engine.vercel.app/",
+  github: "https://github.com/vishal9958/resume-ai-frontend",
   skills: {
     frontend: [
       PROJECT_SKILLS.react,
       PROJECT_SKILLS.js,
       PROJECT_SKILLS.tailwind,
     ],
-    backend: [],
+    backend: [
+      PROJECT_SKILLS.python,
+      PROJECT_SKILLS.sql,
+    ],
   },
+
   get content() {
     return (
       <div>
+
+        {/* ===== INTRO ===== */}
         <TypographyP className="font-mono text-2xl text-center">
-          Stay Organized 📝
+          Resume AI Analyzer 🤖📄
         </TypographyP>
 
         <TypographyP className="font-mono mt-4">
-          Stay Organized is a simple task management application that helps
-          users plan their day, manage tasks, and stay productive.
+          Resume AI Analyzer is an intelligent career assistant platform designed to
+          help users improve their resumes and increase job selection chances.
+          The system uses AI-based analysis to evaluate resume quality, provide
+          ATS score insights, and suggest improvements.
         </TypographyP>
 
         <ProjectsLinks live={this.live} repo={this.github} />
@@ -718,31 +726,73 @@ const projects: Project[] = [
         {/* ===== LANDING ===== */}
         <SlideShow
           images={[
-            `${BASE_PATH}/stay-organized/landing.png`,
+            `${BASE_PATH}/resume-ai/landing.png`,
           ]}
         />
 
-        {/* ===== TASK MANAGEMENT ===== */}
-        <TypographyH3 className="my-4 mt-8">Task Management</TypographyH3>
+        {/* ===== DASHBOARD ===== */}
+        <TypographyH3 className="my-4 mt-8">User Dashboard</TypographyH3>
         <p className="font-mono mb-2">
-          Users can add, view, update, and manage their daily tasks easily,
-          making it simple to track progress and stay focused.
+          Users get access to a personalized dashboard where they can upload resumes,
+          view ATS scores, track improvements, and manage job applications easily.
         </p>
 
         <SlideShow
           images={[
-            `${BASE_PATH}/stay-organized/tasks.png`,
+            `${BASE_PATH}/resume-ai/dashboard.png`,
           ]}
         />
 
+        {/* ===== JOB MATCHING ===== */}
+        <TypographyH3 className="my-4 mt-8">AI Job Matching</TypographyH3>
+        <p className="font-mono mb-2">
+          The system suggests relevant job roles based on resume skills,
+          experience, and keywords using AI matching algorithms.
+        </p>
+
+        <SlideShow
+          images={[
+            `${BASE_PATH}/resume-ai/job-matches.png`,
+          ]}
+        />
+
+        {/* ===== RESUME UPLOAD ===== */}
+        <TypographyH3 className="my-4 mt-8">Resume Upload & Analysis</TypographyH3>
+        <p className="font-mono mb-2">
+          Users can upload resumes in PDF format. The system analyzes resume
+          structure, keywords, formatting, and generates ATS score reports.
+        </p>
+
+        <SlideShow
+          images={[
+            `${BASE_PATH}/resume-ai/upload.png`,
+          ]}
+        />
+
+        {/* ===== AI CHATBOT ===== */}
+        <TypographyH3 className="my-4 mt-8">AI Resume Correction Chatbot</TypographyH3>
+        <p className="font-mono mb-2">
+          Integrated AI chatbot provides resume correction suggestions,
+          grammar fixes, and professional content recommendations.
+        </p>
+
+        <SlideShow
+          images={[
+            `${BASE_PATH}/resume-ai/chatbot.png`,
+          ]}
+        />
+
+        {/* ===== SUMMARY ===== */}
         <TypographyP className="font-mono mt-6 text-center">
-          Stay Organized focuses on simplicity and usability to improve everyday
-          productivity without unnecessary complexity.
+          Resume AI Analyzer helps job seekers optimize resumes, improve ATS
+          compatibility, and increase interview opportunities using AI-driven insights.
         </TypographyP>
+
       </div>
     );
   },
 },
+
 
 ];
 export default projects;
